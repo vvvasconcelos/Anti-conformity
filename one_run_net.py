@@ -28,7 +28,6 @@ def one_run_network(N,num_of_iter,num_of_replicates,x0A,O,frac_w,frac_oA,beta,A,
     
     initial_num_A=int(np.round(N*x0A))
     
-    num_w=int(np.round(frac_w*N))
     num_oA=int(np.round(frac_oA*N))
     
 
@@ -43,7 +42,7 @@ def one_run_network(N,num_of_iter,num_of_replicates,x0A,O,frac_w,frac_oA,beta,A,
 
 
 
-    conformists = np.ones(N-num_w,dtype=np.int32)
+    
     
     #assigning preference randomly 
     oA=np.random.choice( N,num_oA,replace=False)    
@@ -51,25 +50,17 @@ def one_run_network(N,num_of_iter,num_of_replicates,x0A,O,frac_w,frac_oA,beta,A,
     o[oA]=O[0]
    
 
-    c=0
-    for iii in range(N):
-        if w[iii]==1:
-           conformists[c]=iii
-           c=c+1
-           
+               
     #stores alignment of choice and preference of entire population
-    avg_align_a=np.ones(num_of_replicates, dtype=np.float32)
+    final_align=np.ones(num_of_replicates, dtype=np.float32)
     
-    #stores alignment of choice and preference of conformists
-    avg_align_c=np.ones(num_of_replicates, dtype=np.float32)
     
     
     volatility=np.ones(num_of_replicates, dtype=np.float32)
     
-    time_taken=np.ones(num_of_replicates, dtype=np.int32)
-    
+        
     #stores equilibrium value of xA
-    avg_xa=np.zeros(num_of_replicates,dtype=np.float32)
+    final_xa=np.zeros(num_of_replicates,dtype=np.float32)
     
     
     
@@ -86,10 +77,6 @@ def one_run_network(N,num_of_iter,num_of_replicates,x0A,O,frac_w,frac_oA,beta,A,
         choices[initial_choice_A] = 1
         
 
-        #oA=np.random.choice( N,num_oA,replace=False)
-        #o = np.ones(N, dtype=np.int32)*O[1]
-        #o[oA]=O[0]
-        
         cc=0
 
 
@@ -123,18 +110,16 @@ def one_run_network(N,num_of_iter,num_of_replicates,x0A,O,frac_w,frac_oA,beta,A,
 
             if (np.std(x1) < 0.0001) or i == int(num_of_iter/N)-1  :
 
-                avg_align_c[r]=(len([j for  j in conformists if (o[j]*choices[j]>0)]))/(N*(1-frac_w))
-                avg_align_a[r]=(len([j for j in range(N) if (o[j]*choices[j]>0)]))/N
-                avg_xa[r]=xa/N
+                final_align[r]=(len([j for j in range(N) if (o[j]*choices[j]>0)]))/N
+                final_xa[r]=xa/N
                 volatility[r]=change/N
-                time_taken[r]=i+1
                 break
             
                 
                 
 
 
-    return np.mean(avg_xa),np.mean(volatility),np.mean(avg_align_a),np.mean(avg_align_c),np.mean(time_taken)
+    return np.mean(final_xa),np.mean(volatility),np.mean(final_align)
 
 
 
