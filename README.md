@@ -46,7 +46,7 @@ To use the code:
 
 ## License
 
-This GUI is distributed under the Creative Commons Attribution 4.0 International license. The DOI of the project is https://doi.org/XXXXXXXX
+This GUI is distributed under the Creative Commons Attribution 4.0 International license. The DOI of the project is https://doi.org/XXXXXXXX](https://doi.org/10.5281/zenodo.12707358)
 
 
 ## Acknowledgments
