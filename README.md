@@ -1,4 +1,4 @@
-# Collective Decision-Making Dynamics with Heterogeneous Preferences on Networks
+# Anti-conformists catalyze societal transitions and facilitate the expression of evolving preferences
 
 This repository contains Python code for ABM simulations of collective decision-making dynamics in heterogeneous populations with (evolving) preferences and differing conforming tendencies on networks. The code implements a model where individuals make choices influenced by their preferences and the choices of their neighbors in a network. 
 
