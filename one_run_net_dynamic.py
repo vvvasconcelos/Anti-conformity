@@ -18,9 +18,8 @@ from numba import njit
 # frac_oA : fraction of population preferring A
 # beta : inverse temperature of fermi update function 
 # A : adjacency matrix of the network of the population
-# freq: rate of change of preference in case of linearly changing prefernce or frequency of sinusoidal preference
-# linear: 1 for linearly changing prefernce and 0 for sinusoidal preference 
 # w : list of conformities of agents 
+# o : time series of dynamic net preferences
 
 @njit(fastmath=True)
 def one_run_network_dynamic(N,num_of_iter,x0A,frac_w,beta,A,w,o):
