@@ -45,7 +45,6 @@ To use the code:
 
 This GUI is distributed under the Creative Commons Attribution 4.0 International license. The DOI of the project is https://doi.org/XXXXXXXX
 
-Feel free to explore the model, experiment with parameter settings, and gain insights into the dynamics of common pool resources!
 
 ## Acknowledgments
 
