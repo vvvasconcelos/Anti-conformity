@@ -8,6 +8,17 @@ Created on Wed Jul 10 14:33:59 2024
 import numpy as np
 from numba import njit
 
+
+## This function assigns conformity to the nodes of a given network to achieve required 
+#  coorelation between anti-conformity(non-conformity) and node degree
+
+# hipsters_on_hubs : 0 for random placement, 1 for central placement 
+# N : Population size
+# frac_w : Fraction of anti-conformists in the population
+# corr : desired correlation between anti-confomity and node degree
+# A : adjacency matrix of the network of the population
+# conformity : [-1,1] first(second) element is w for anti-conformists(conformists)
+
 @njit(fastmath=True)
 def conformity_placement_on_network(hipsters_on_hubs,N,frac_w,corr,A,conformity):
     

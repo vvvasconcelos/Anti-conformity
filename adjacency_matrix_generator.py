@@ -4,6 +4,9 @@ Created on Wed Jul 10 14:27:54 2024
 
 @author: dmittal
 """
+
+##this function returns the adjacency matrix of the required graph
+
 import networkx as nx
 
 def adjacency_matrix_generator(network,N, z,rndseed):

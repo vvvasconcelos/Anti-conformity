@@ -15,11 +15,12 @@ from numba import njit
 # num_of_iter : maximum number of iterations
 # x0A : intial fraction of population with choice A
 # frac_w : fration of anti-conformists
-# frac_oA : fraction of population preferring A
 # beta : inverse temperature of fermi update function 
 # A : adjacency matrix of the network of the population
 # w : list of conformities of agents 
 # o : time series of dynamic net preferences
+
+
 
 @njit(fastmath=True)
 def one_run_network_dynamic(N,num_of_iter,x0A,frac_w,beta,A,w,o):
