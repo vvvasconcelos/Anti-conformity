@@ -34,7 +34,6 @@ Each Python script takes various parameters to customize the simulation, includi
 - Equilibrium fraction of choice A in the population
 - Equilibrium alignment of choice and preference for the entire population.
 - Equilibrium alignment of choice and preference for the conforming subpopulation.
-- Time taken for the population to reach equilibrium
 - Volatility in choices at the end of the simulation
 
   
