@@ -5,15 +5,19 @@ This repository contains Python code for ABM simulations of collective decision-
 
 ## Code Overview
 
-The repository includes three main Python scripts:
+The repository includes the following Python scripts:
 
 1. `one_run_network.py`: This script simulates population dynamics with heterogenous preferences on networks. It implements a model where individuals update their choices based on their preferences and the choices of their neighbors on a fixed graph.
 
 2. `one_run_well_mixed.py`: This script simulates population dynamics with heterogenous preferences connected probabilistically, mimicking a well-mixed limit. It models a scenario where individuals' choices are influenced by their preferences, the choices of randomly sampled neighbors.
 
-3. `one_run_net_dynamic.py`: This script simulates population dynamics with evolving preferences on networks. It implements a model where individuals update their choices based on their evolving preferences (which are shared by all agents) and the choices of their neighbors on a fixed graph. 
+3. `one_run_net_dynamic.py`: This script simulates population dynamics with evolving preferences on networks. It implements a model where individuals update their choices based on their evolving preferences (which are shared by all agents) and the choices of their neighbors on a fixed graph.
 
-4. `README.md`: This file provides information about the code and how to use it.
+4. `adjacency_matrix_generator.py`: This function returns the adjacency matrix of the required graph (Barabasi-Albert or Erdos Renyi)
+
+5. `conformity_placement_on_network.py`: This function assigns conformity to the nodes of a given network to achieve the required correlation between anti-conformity(non-conformity) and node degree.
+
+6. `Manuscript_figures.ipynb`: This notebook can be used to generate figures from the main text. This notebook uses the above scripts to initialize and run simulations.
 
 ## Usage
 
@@ -21,13 +25,13 @@ To use the code:
 
 1. Ensure you have Python installed on your system.
 2. These scripts are completely based on Numpy. 
-3. Run the desired Python script with appropriate parameters to conduct simulations.
+
 
 ## Parameters
 
 Each Python script takes various parameters to customize the simulation, including population size, number of iterations, initial fraction of the population with a specific choice, strengths of preferences, fractions of conformists and anti-conformists, inverse temperature for the Fermi update function, adjacency matrix of the network, and lists of conformities of agents.
 
-## Output
+## Output of simulation scripts
 
 `one_run_network.py` and `one_run_well_mixed.py` have the following output:
 
@@ -40,8 +44,6 @@ Each Python script takes various parameters to customize the simulation, includi
 
 - Time series of the fraction of individuals choosing option A in the conforming and the anti-conforming subpopulations, as well as the entire population.
 - Average alignment of choice and preference for the conforming and the anti-conforming subpopulations.
-- Average satisfaction of the population over time.
-- Average social pressure to choose option A over time.
 
 ## License
 
@@ -49,4 +51,4 @@ This project is licensed under the MIT License.
 
 ## Acknowledgments
 
-This code was developed by Dhruv.
+This code was developed by Dhruv Mittal.
