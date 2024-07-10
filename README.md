@@ -27,10 +27,6 @@ To use the code:
 2. These scripts are completely based on Numpy. 
 
 
-## Parameters
-
-Each Python script takes various parameters to customize the simulation, including population size, number of iterations, initial fraction of the population with a specific choice, strengths of preferences, fractions of conformists and anti-conformists, inverse temperature for the Fermi update function, adjacency matrix of the network, and lists of conformities of agents.
-
 ## Output of simulation scripts
 
 `one_run_network.py` and `one_run_well_mixed.py` have the following output:
